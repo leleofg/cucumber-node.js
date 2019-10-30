@@ -3,6 +3,9 @@ const { setWorldConstructor } = require("cucumber");
 class World {
     constructor() {
         this.variable = 0;
+        this.email = null;
+        this.name = null;
+        this.password = null;
     }
 
     setTo(number) {
@@ -18,6 +21,18 @@ class World {
             return "TGIF";
         }
         return "Nope";
+    }
+
+    setEmail(email) {
+        this.email = email;
+    }
+
+    setName(name) {
+        this.name = name;
+    }
+
+    setPassword(password) {
+        this.password = password;
     }
 }
 

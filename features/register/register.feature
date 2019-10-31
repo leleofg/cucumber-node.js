@@ -6,6 +6,12 @@ Feature: Register user
         And the password "123456"
         Then response status should be 400
 
+    Scenario: I as a user want to sign up with email in caps lock
+        Given the email "LEONARDO-TEST@GMAIL.COM"
+        And the name "Leonardo Farias"
+        And the password "123456"
+        Then response status should be 400
+
     Scenario: I as a user want to sign up with a short name
         Given the email "test@gmail.com"
         And the name "Le"

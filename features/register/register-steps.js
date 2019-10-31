@@ -13,7 +13,6 @@ BeforeAll(async () => {
 });
 
 AfterAll(async () => {
-    await mongoose.connection.close();
 });
 
 Given("the email {string}", function (email) {

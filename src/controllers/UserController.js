@@ -22,16 +22,11 @@ class UserController {
                 return res.status(400).send({ msg: "E-mail já existente" });
             }
 
-            const user = await User.create(req.body);
+            await User.create(req.body);
 
-            return res.status(201).send({
-                id: user.id,
-                createdAt: user.createdAt,
-                updatedAt: user.updatedAt,
-                lastLogin: user.createdAt
-            });
+            return res.status(201).send({ msg: "Usuário cadastrado com sucesso" });
         } catch (err) {
-            return res.status(400).send({ error: 'Registration failed' });
+            return res.status(400).send({ error: 'Falha ao cadastrar usuário' });
         }
     }
 }

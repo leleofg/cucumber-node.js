@@ -1,4 +1,4 @@
-const { Given, Then, BeforeAll, AfterAll } = require("cucumber");
+const { Given, Then, BeforeAll, When } = require("cucumber");
 const { expect } = require("chai");
 const chai = require("chai");
 const mongoose = require("mongoose");
@@ -12,18 +12,11 @@ BeforeAll(async () => {
     await User.deleteMany({});
 });
 
-AfterAll(async () => {
-});
+Given("the register screen", function () { });
 
-Given("the email {string}", function (email) {
-    this.setEmail(email);
-});
-
-Given("the name {string}", function (name) {
+When("fills the fields with {string}, {string} and {string}", function (name, email, password) {
     this.setName(name);
-});
-
-Given("the password {string}", function (password) {
+    this.setEmail(email);
     this.setPassword(password);
 });
 

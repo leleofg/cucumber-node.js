@@ -1,6 +1,9 @@
-Feature: Transfer TED
+Feature: Transferência TED entre contas PF
 
-    Scenario: I as a user want to trasnfer R$ 50,00 to my friend
-        Given the account number 54263211 and branch 21453
-        When entering account data to do the transfer with account number 1459785, branch 1030 and value 50
-        Then response status ted should be 201
+    Scenario: como usuário PF quero transferir R$ 50,00 para outra conta PF
+        Given número de conta origem 54263211 e agencia 21453
+        And saldo atual de 120
+        When digitar número da conta a ser realizada a trasnferência 1459785 e agencia 1030
+        And valor a ser transferido de 50
+        Then o status de resposta da transferencia TED deve ser 201
+        And e o saldo deve ser de 70
